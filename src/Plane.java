@@ -19,8 +19,7 @@ public class Plane implements Movable, Comparable{
 	
     @Override
     public String getType() {
-        // TODO: Implement.
-        return null;
+        return "Plane";
     }
 
     @Override
@@ -46,12 +45,22 @@ public class Plane implements Movable, Comparable{
 
     @Override
     public void move() {
-        // TODO: implement;
+        Location temp = this.destination;
+        destination = source;
+        source = temp;
     }
 
     @Override
     public int compareTo(Object o) {
-        // TODO: implement;
-        return 0;
+        //return -1 if this plane lower than p
+        //return 0 if they are equal
+        //return 1 if this plane higher than p
+        Plane p = (Plane)o;
+        if (this.maximalHeight < p.maximalHeight)
+            return -1;
+        else if(this.maximalHeight == p.maximalHeight)
+            return 0;
+        else
+            return 1;
     }
 }
