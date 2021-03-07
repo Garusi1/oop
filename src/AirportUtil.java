@@ -8,7 +8,8 @@ public class AirportUtil {
     static String reportAll (Movable[] movables) {
         ArrayList<String> buffer = new ArrayList<>();
         for (Movable m: movables) {
-            m.toString();
+            buffer.add(m.getType() + " " + m.getId()+" going from "+ m.getSource()+ " to "+ m.getDestination()
+            + ". Currently in "+m.getCurrentLocation());
         }
         return String.join("\n",buffer);
     }

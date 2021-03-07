@@ -39,8 +39,7 @@ public class Plane implements Movable, Comparable{
 
     @Override
     public String getCurrentLocation() {
-        // TODO: Implement.
-        return null;
+        return source.toString();
     }
 
     @Override
